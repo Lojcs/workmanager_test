@@ -9,8 +9,6 @@ import 'package:workmanager_tester/logger.dart';
 
 @pragma('vm:entry-point')
 void callbackDispatcher() {
-  WidgetsFlutterBinding.ensureInitialized();
-  Logger.log("Callback dispatched.");
   Workmanager().executeTask((task, inputData) async {
     Logger.log("Task started: $task");
     final port = IsolateNameServer.lookupPortByName("Worktest_ui");
